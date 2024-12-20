@@ -1,17 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function SearchBar({ searchTerm, onSearchChange }) {
+function Navbar() {
   return (
-    <div className="search-bar">
-      <input
-        type="text"
-        placeholder="Tìm kiếm sản phẩm..."
-        value={searchTerm}
-        onChange={(e) => onSearchChange(e.target.value)}
-        className="search-input"
-      />
-    </div>
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <Link to="/" className="nav-link">Quản Lý Hàng Hóa</Link>
+      </div>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to="/" className="nav-link">Trang Chủ</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/add" className="nav-link">Thêm Sản Phẩm</Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
-export default SearchBar; 
+export default Navbar;
